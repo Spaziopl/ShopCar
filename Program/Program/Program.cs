@@ -1,54 +1,32 @@
 ﻿// See https://aka.ms/new-console-template for more information
 
 
-using myApp.Models;
 using System.Linq;
-using MyWebApp;
+using MyWebApp.Data;
+using MyWebApp.Models;
+using Microsoft.EntityFrameworkCore;
 
-internal class Program
+using var context = new AppDbConetext();
+
+//var owner = new Owner { Name = "Kasia" };
+
+//owner.Cars.Add(new Car { Brand = "BMW", YearProdcution = 2022 });
+
+//context.Add(owner);
+
+//context.SaveChanges();
+//Console.WriteLine("Data saved to databes successfully");
+
+
+var owners = context.Owners.Include(o => o.Cars).ToList();
+
+foreach (var owner in owners)
 {
-    static void Main(string[] args)
+    Console.WriteLine($"Name: {owner.Name}");
+    foreach(var car  in owner.Cars)
     {
-        //List<Person> people = new List<Person>();
-
-
-        //people.Add(new Person("Andrzej", 23));
-        //people.Add(new Person("Marek", 12));
-        //people.Add(new Person("Mati", 3));
-
-        //var adults = people.Where(p => p.Age > 22).ToList();
-        //Console.WriteLine("Adults: ");
-        //foreach (var person in adults)
-        //{
-        //    person.Introduce();
-        //}
-
-        //var sortedPeople = people.OrderBy(p => p.Age).ToList();
-
-        //foreach(var person in sortedPeople)
-        //{
-        //    person.Introduce();
-        //}
-
-            List<Car> cars = new List<Car>
-    {
-        new Car("Audi", 2002),
-        new Car("BMW", 1999),
-        new Car("Toyota", 2015),
-        new Car("Toyota", 2009),
-        new Car("Mercedes", 1980),
-        new Car("Honda", 2020)
-    };
-        Console.WriteLine("");
-
-        var carList = cars.Where(p => p.Brand == "Toyota").OrderBy(x => x.YearProduction).ToList();
-
-        foreach (var car in carList) 
-        {
-            car.Introduce();
-        }
-
-
+        Console.WriteLine($"Car: {car.Brand}, {car.YearProdcution}");
     }
 }
+
 
