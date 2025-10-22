@@ -46,6 +46,7 @@ namespace CarSeller.Controllers
         // GET: Cars/Create
         public IActionResult Create()
         {
+            ViewBag.Owners = new SelectList(_context.Owners, "Id", "Name"); 
             return View();
         }
 
@@ -54,7 +55,7 @@ namespace CarSeller.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Brand,Year,Price")] Car car)
+        public async Task<IActionResult> Create(Car car)
         {
             if (ModelState.IsValid)
             {
@@ -62,6 +63,7 @@ namespace CarSeller.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
+            ViewBag.Owners = new SelectList(_context.Owners, "Id", "Name");
             return View(car);
         }
 
