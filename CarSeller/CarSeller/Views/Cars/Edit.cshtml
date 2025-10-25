@@ -15,7 +15,10 @@
             <input type="hidden" asp-for="Id" />
             <div class="form-group">
                 <label asp-for="Brand" class="control-label"></label>
-                <input asp-for="Brand" class="form-control" />
+                <select asp-for="Brand" class="form-control"
+                        asp-items="Html.GetEnumSelectList<CarBrand>()">
+                    <option value="">-- Select Brand --</option>
+                </select>
                 <span asp-validation-for="Brand" class="text-danger"></span>
             </div>
             <div class="form-group">
