@@ -1,8 +1,18 @@
-﻿@{
+﻿@model CarSeller.Models.Car; 
+@{
     ViewData["Title"] = "Home Page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<div class="home-container">
+    <div>
+        <label asp-for="Brand"></label>
+        <select class="custom-select" asp-for="Brand"
+                asp-items="Html.GetEnumSelectList<CarBrand>()">
+            <option value="">Car</option>
+        </select>
+        <span asp-validation-for="Brand" class="text-danger"></span>
+    </div>
+    <div>
+        <button>Search</button>
+    </div>
 </div>

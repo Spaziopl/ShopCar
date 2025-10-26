@@ -1,10 +1,12 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 
 namespace CarSeller.Models
 {
     public class Car
     {
         public int Id { get; set; }
+        [Display(Name ="")]
         public CarBrand Brand { get; set; }
         public int Year { get; set; }
 

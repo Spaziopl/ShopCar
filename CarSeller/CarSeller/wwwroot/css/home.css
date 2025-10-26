@@ -1,0 +1,47 @@
+﻿
+.home-container {
+    background-image: url('/image/CarBackground.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 70vh;
+    text-align: center;
+    padding: 20px;
+}
+.home-container > div{
+    background-color: black;
+    margin-left: 20px;
+    margin-right: 800px;
+    height: 5vh;
+}
+.home-container > div > label{
+    content: "";
+    color: white;
+}
+    .home-container > div > select {
+        border: 1px;
+        border-radius: 0.2rem;
+        box-shadow: none;
+        font-family: "Montserrat", sans-serif;
+        font-optical-sizing: auto;
+        font-style: normal;
+        background-color: #ececec;
+    }
+.custom-select {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-color: white;
+    border: 1px solid #ccc;
+    padding: 8px 12px;
+    border-radius: 6px;
+    font-size: 1rem;
+    cursor: pointer;
+}
+.custom-select{
+    background-image: url('/image/arrow-down.svg');
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 12px;
+    padding-right: 30px;
+}
