@@ -4,21 +4,45 @@
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    height: 70vh;
-    text-align: center;
+    font-family: "Montserrat", sans-serif;
+    height: 60vh;
     padding: 20px;
+    display: flex;
+    flex-direction: column;
 }
-.home-container > div{
-    background-color: black;
+.home-container > div > div{
+    justify-content: start;
+    background-color: white;
+    border: 1px;
+    border-radius: 0.3rem 0.3rem 0rem 0rem;
+    padding-top: 15px;
+    padding-left: 10px;
+    height: 13vh;
+    width: 35vh;
+    display: flex;
+    justify-content: center;
+}
+.home-container > div > div:nth-child(2){
+    border-radius: 0rem;
+    height: 9vh;
+    border-radius: 0rem 0rem 0.3rem 0.3rem;
+    
+}
+.home-container div > div > p{
+    margin-bottom: 0.1px;
     margin-left: 20px;
-    margin-right: 800px;
+}
+.home-container div > div > button{
+    border-radius: 0.2rem;
+    border: 1px;
+    width: 10vh;
     height: 5vh;
 }
-.home-container > div > label{
+.home-container div > div > label{
     content: "";
     color: white;
 }
-    .home-container > div > select {
+    .home-container div > div > select {
         border: 1px;
         border-radius: 0.2rem;
         box-shadow: none;
@@ -27,8 +51,8 @@
         font-style: normal;
         background-color: #ececec;
     }
-.custom-select {
-    appearance: none;
+.custom-select{
+    
     -webkit-appearance: none;
     -moz-appearance: none;
     background-color: white;
@@ -45,3 +69,9 @@
     background-size: 12px;
     padding-right: 30px;
 }
+    .custom-select > option:hover {
+        background-color: red;
+    }
+    .custom-select > option:checked{
+        background-color: grey;
+    }
